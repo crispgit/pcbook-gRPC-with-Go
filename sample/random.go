@@ -8,6 +8,7 @@ import (
 	"github.com/google/uuid"
 )
 
+// use the nano seconds to generate random test data
 func init() {
 	rand.Seed(time.Now().UnixNano())
 }
