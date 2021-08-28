@@ -1,27 +1,27 @@
 {
-  "id": "e9a54032-1763-4a1d-b0bf-afa8bb78ed3b",
-  "brand": "Dell",
-  "name": "XPS",
+  "id": "f6a19d18-6cd4-48c6-8986-5f1929e7399f",
+  "brand": "Lenovo",
+  "name": "Thinkpad X1",
   "cpu": {
-    "brand": "Intel",
-    "name": "Core i3-1005G1",
-    "number_cores": 3,
-    "number_threads": 11,
-    "min_ghz": 2.738956836413954,
-    "max_ghz": 4.473227645863312
+    "brand": "AMD",
+    "name": "Ryzen 5 PRO 3500U",
+    "number_cores": 5,
+    "number_threads": 7,
+    "min_ghz": 3.147974469465132,
+    "max_ghz": 3.3004243623363867
   },
   "ram": {
-    "value": "5",
+    "value": "32",
     "unit": "GIGABYTE"
   },
   "gpus": [
     {
       "brand": "AMD",
-      "name": "RX 580",
-      "min_ghz": 1.487542578495412,
-      "max_ghz": 1.872342206913562,
+      "name": "RX Vega-56",
+      "min_ghz": 1.016789099814534,
+      "max_ghz": 1.737054346690683,
       "memory": {
-        "value": "4",
+        "value": "3",
         "unit": "GIGABYTE"
       }
     }
@@ -30,33 +30,33 @@
     {
       "driver": "SSD",
       "memory": {
-        "value": "382",
+        "value": "944",
         "unit": "GIGABYTE"
       }
     },
     {
       "driver": "HDD",
       "memory": {
-        "value": "1",
+        "value": "4",
         "unit": "TERABYTE"
       }
     }
   ],
   "screen": {
-    "size_inch": 13.087741,
+    "size_inch": 14.064855,
     "resolution": {
-      "width": 7626,
-      "height": 4290
+      "width": 5464,
+      "height": 3074
     },
-    "panel": "OLED",
+    "panel": "IPS",
     "multitouch": false
   },
   "keyboard": {
-    "layout": "QWERTZ",
+    "layout": "AZERTY",
     "backlit": false
   },
-  "weight_kg": 1.9410859438795791,
-  "price_usd": 3202.091604596587,
-  "release_year": 2019,
-  "updated_at": "2021-08-28T02:53:21.008984Z"
+  "weight_kg": 2.2733285538153556,
+  "price_usd": 1741.736660455905,
+  "release_year": 2015,
+  "updated_at": "2021-08-28T20:49:37.735431Z"
 }

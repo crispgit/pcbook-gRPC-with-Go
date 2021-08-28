@@ -1,14 +1,14 @@
 package service
 
 import (
-	"bytes"
+	// "bytes"
 	"context"
 	"errors"
-	"io"
+	// "io"
 	"log"
 
 	"github.com/google/uuid"
-	"gitlab.com/crispgit/pcbook/pb"
+	"github.com/crispgit/pcbook/pb"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )
@@ -19,8 +19,8 @@ type LaptopServer struct {
 }
 
 // return a LaptopServer instance
-func NewLaptopServer() *LaptopServer {
-	return &LaptopServer{}
+func NewLaptopServer(store LaptopStore) *LaptopServer {
+	return &LaptopServer{store}
 }
 
 // CreateLaptop is a unary RPC to create a new laptop
