@@ -1,10 +1,10 @@
 package service
 
 import (
-	"context"
+	// "context"
 	"errors"
 	"fmt"
-	"log"
+	// "log"
 	"sync"
 
 	"github.com/jinzhu/copier"
@@ -73,7 +73,6 @@ func (store *InMemoryLaptopStore) Find(id string) (*pb.Laptop, error) {
 
 // Search searches for laptops with filter, returns one by one via the found function
 func (store *InMemoryLaptopStore) Search(
-	ctx context.Context,
 	filter *pb.Filter,
 	found func(laptop *pb.Laptop) error,
 ) error {
@@ -82,14 +81,6 @@ func (store *InMemoryLaptopStore) Search(
 	defer store.mutex.RUnlock()
 
 	for _, laptop := range store.data {
-		if ctx.Err() == context.Canceled || ctx.Err() == context.DeadlineExceeded {
-			log.Print("context is cancelled")
-			return nil
-		}
-
-		// time.Sleep(time.Second)
-		// log.Print("checking laptop id: ", laptop.GetId())
-
 		if isQualified(filter, laptop) {
 			other, err := deepCopy(laptop)
 			if err != nil {
