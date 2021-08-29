@@ -4,11 +4,13 @@ import (
 	// "bytes"
 	"context"
 	"errors"
+	"time"
+
 	// "io"
 	"log"
 
-	"github.com/google/uuid"
 	"github.com/crispgit/pcbook/pb"
+	"github.com/google/uuid"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )
@@ -44,6 +46,19 @@ func (server *LaptopServer) CreateLaptop(
 			return nil, status.Errorf(codes.Internal, "cannot generate a new laptop ID: %v", err)
 		}
 		laptop.Id = id.String()
+	}
+
+	// processing time
+	time.Sleep(6 * time.Second)
+
+	if ctx.Err() == context.Canceled {
+		log.Print("request is canceled")
+		return nil, status.Error(codes.Canceled, "request is canceled")
+	}
+
+	if ctx.Err() == context.DeadlineExceeded {
+		log.Print("deadline is exceeded")
+		return nil, status.Error(codes.DeadlineExceeded, "deadline is exceeded")
 	}
 
 	// save the laptop to store
