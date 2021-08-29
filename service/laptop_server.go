@@ -4,7 +4,7 @@ import (
 	// "bytes"
 	"context"
 	"errors"
-	"time"
+	// "time"
 
 	// "io"
 	"log"
@@ -49,7 +49,7 @@ func (server *LaptopServer) CreateLaptop(
 	}
 
 	// processing time
-	time.Sleep(6 * time.Second)
+	// time.Sleep(6 * time.Second)
 
 	if ctx.Err() == context.Canceled {
 		log.Print("request is canceled")
@@ -90,6 +90,7 @@ func (server *LaptopServer) SearchLaptop(
 	log.Printf("receive a search-laptop request with filter: %v", filter)
 
 	err := server.Store.Search(
+		stream.Context(),
 		filter,
 		func(laptop *pb.Laptop) error {
 			res := &pb.SearchLaptopResponse{Laptop: laptop}
